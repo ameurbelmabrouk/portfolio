@@ -105,10 +105,10 @@ const Chatbot = ({ theme }) => {
       } else if (['⚡ ASAP', '📅 1-2 weeks', '🗓️ 1 month', '💬 Discuss timing'].includes(button)) {
         addBotMessage(
           `Got it! ${button}\n\nDo you have a budget in mind?`,
-          ['💰 Under $500', '💵 $500-$1000', '💸 $1000+', '💬 Discuss budget']
+          ['💰 Under 20000.00 DZD', '💵 20000.00 DZD-50000.00 DZD', '💸 10000.00 DZD', '💬 Discuss budget']
         );
         setCurrentStep('budget');
-      } else if (['💰 Under $500', '💵 $500-$1000', '💸 $1000+', '💬 Discuss budget'].includes(button)) {
+      } else if (['💰 Under 20000.00 DZD', '💵 20000.00 DZD-50000.00 DZD', '💸 10000.00 DZD', '💬 Discuss budget'].includes(button)) {
         addBotMessage(
           `Perfect! 👍\n\nAmeur will contact you soon to discuss the details.\n\nPlease send an email to get started!`,
           ['✉️ Send Email', '🔙 Back to menu']
