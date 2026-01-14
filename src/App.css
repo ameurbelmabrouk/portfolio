@@ -1,0 +1,146 @@
+/* ================= CLEAN PORTFOLIO APP.CSS ================= */
+/* Portfolio-only styles + proper Dark Mode support */
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Theme Variables ---------- */
+:root {
+  --bg-main: #ffffff;
+  --bg-alt: #f9fafb;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --border-soft: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] {
+  --bg-main: #0f0f0f;
+  --bg-alt: #1a1a1a;
+  --text-main: #e8e8e8;
+  --text-muted: #a0a0a0;
+  --border-soft: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Layout ---------- */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+section {
+  width: 100%;
+  background-color: var(--bg-main);
+  transition: background-color 0.3s ease;
+}
+
+/* ---------- Header ---------- */
+header {
+  background: var(--bg-main);
+  box-shadow: 0 2px 6px var(--border-soft);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+header nav a {
+  color: var(--text-main);
+}
+
+header nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+/* ---------- Hero ---------- */
+.hero-title {
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-soft);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 80px;
+  background: var(--bg-main);
+  transition: background-color 0.3s ease;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  header nav a {
+    margin: 0 10px;
+  }
+}
+
+/* ---------- Dark Mode Toggle ---------- */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  color: var(--text-main);
+  font-size: 18px;
+  padding: 8px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg) scale(1.1);
+  background-color: var(--bg-alt);
+}
